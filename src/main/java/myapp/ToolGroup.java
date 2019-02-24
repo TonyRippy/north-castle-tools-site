@@ -21,6 +21,7 @@ public class ToolGroup extends DataObject<ToolGroup> {
   public String id;
   public String name;
   public String description;
+  public Number order;
   public List<Tool> tools;
 
   public ToolGroup(String id) {
@@ -63,6 +64,7 @@ public class ToolGroup extends DataObject<ToolGroup> {
   protected boolean readAllFields(Entity e) {
     name = getString(e, "name");
     description = getText(e, "description");
+    order = getNumber(e, "order");
     return true;
   }
 
@@ -70,6 +72,7 @@ public class ToolGroup extends DataObject<ToolGroup> {
   protected boolean writeAllFields(Entity.Builder e) {
     setString(e, "name", name);
     setText(e, "description", description);
+    setNumber(e, "order", order);
     return true;
   }
 

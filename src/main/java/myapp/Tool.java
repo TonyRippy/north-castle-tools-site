@@ -74,7 +74,7 @@ public class Tool extends DataObject<Tool> {
 
   @Override
   protected boolean writeAllFields(Entity.Builder e) {
-    setString(e, "name", description);
+    setString(e, "name", name);
     setText(e, "description", description);
     return true;
   }

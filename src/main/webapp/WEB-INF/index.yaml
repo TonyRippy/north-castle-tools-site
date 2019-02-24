@@ -1,0 +1,11 @@
+indexes:
+
+- kind: ToolGroup
+  ancestor: no
+  properties:
+  - name: order
+
+- kind: Tool
+  ancestor: yes
+  properties:
+  - name: name
