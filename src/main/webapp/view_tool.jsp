@@ -65,6 +65,11 @@ UserService userService = UserServiceFactory.getUserService();
         <div class="grid_7 alpha">
           <h1><%= selected.name %></h1>
           <p>
+            <% if (selected.code != null) { %>
+            Code: <%= selected.code %>
+            <% } %>  
+          </p>
+          <p>
             <%= selected.description == null ? "" : selected.description %>
           </p>
         </div>

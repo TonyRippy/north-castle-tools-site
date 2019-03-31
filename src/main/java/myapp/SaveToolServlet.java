@@ -55,6 +55,7 @@ public class SaveToolServlet extends SaveServlet {
     // Read the rest of the fields and save the record.
     t.name = s(req, "name");
     t.description = s(req, "description");
+    t.code = s(req, "code");
     t.writeToDatastore();
 
     // Let the user know the request succeeded, redirect to the view page.

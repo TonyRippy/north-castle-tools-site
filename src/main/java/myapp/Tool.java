@@ -18,8 +18,9 @@ public class Tool extends DataObject<Tool> {
   public static final String KIND = "Tool";
   
   public String id;
-  public String toolGroupId;
+  public String toolGroupId;  
   public String name;
+  public String code;
   public String description;
 
   public Tool(String id, String toolGroupId) {
@@ -69,6 +70,7 @@ public class Tool extends DataObject<Tool> {
   protected boolean readAllFields(Entity e) {
     name = getString(e, "name");
     description = getText(e, "description");
+    code = getString(e, "code");
     return true;
   }
 
@@ -76,6 +78,7 @@ public class Tool extends DataObject<Tool> {
   protected boolean writeAllFields(Entity.Builder e) {
     setString(e, "name", name);
     setText(e, "description", description);
+    setString(e, "code", code);
     return true;
   }
 

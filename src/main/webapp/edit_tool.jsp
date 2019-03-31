@@ -79,6 +79,11 @@ if (t == null) {
             <input type="text" id="name" name="name"
               value="<%= t == null || t.name == null ? "" : t.name %>">
           </p>
+          <p>
+            <label for="code">Code:</label>
+            <input type="text" id="code" name="code"
+              value="<%= t == null || t.code == null ? "" : t.code %>">
+          </p>
           </fieldset>
           <fieldset>
           <legend>Description</legend>
