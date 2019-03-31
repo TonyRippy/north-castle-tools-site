@@ -64,11 +64,14 @@ UserService userService = UserServiceFactory.getUserService();
         </div>
         <div class="grid_7 alpha">
           <h1><%= selected.name %></h1>
-          <p>
+          <table>
             <% if (selected.code != null) { %>
-            Code: <%= selected.code %>
+              <tr><th>Code:</th><td><%= selected.code %></td></tr>
             <% } %>  
-          </p>
+            <% if (selected.location != null) { %>
+              <tr><th>Location:</th><td><%= selected.location %></td></tr>
+            <% } %>  
+          </table>
           <p>
             <%= selected.description == null ? "" : selected.description %>
           </p>

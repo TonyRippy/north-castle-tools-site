@@ -84,6 +84,11 @@ if (t == null) {
             <input type="text" id="code" name="code"
               value="<%= t == null || t.code == null ? "" : t.code %>">
           </p>
+          <p>
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location"
+              value="<%= t == null || t.location == null ? "" : t.location %>">
+          </p>
           </fieldset>
           <fieldset>
           <legend>Description</legend>
