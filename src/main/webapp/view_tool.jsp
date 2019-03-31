@@ -39,6 +39,9 @@ UserService userService = UserServiceFactory.getUserService();
         float: right;
         padding-right: 20px;
       }
+      img {
+        width: 90%;
+      }
     </style>
   </head>
   <body>
@@ -77,13 +80,11 @@ UserService userService = UserServiceFactory.getUserService();
           </p>
         </div>
         <div class="grid_5 omega">
-          <%--
-          <% if (selected.images == null) { %>
-            <img src="/images/grave.jpg"></img>
-          <% } else for (String url : selected.images) { %>
-            <img src="<%= url %>"></img>
+          <% if (selected.images != null) { %>
+            <% for (String url : selected.images) { %>
+              <img src="<%= url %>"></img>
+            <% } %>  
           <% } %>  
-          --%>
         </div>
       </div>
     </div>

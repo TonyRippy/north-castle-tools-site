@@ -23,7 +23,8 @@ public class Tool extends DataObject<Tool> {
   public String code;
   public String location;
   public String description;
-
+  public List<String> images;
+  
   public Tool(String id, String toolGroupId) {
     this.id = id;
     this.toolGroupId = toolGroupId;
@@ -73,6 +74,7 @@ public class Tool extends DataObject<Tool> {
     description = getText(e, "description");
     code = getString(e, "code");
     location = getString(e, "location");
+    images = getStringList(e, "images");
     return true;
   }
 
@@ -82,6 +84,7 @@ public class Tool extends DataObject<Tool> {
     setText(e, "description", description);
     setString(e, "code", code);
     setString(e, "location", location);
+    setStringList(e, "images", images);
     return true;
   }
 

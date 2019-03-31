@@ -96,6 +96,13 @@ if (t == null) {
             <%= t.description == null ? "" : t.description %>
           </textarea>
           </fieldset>
+          <fieldset>
+          <legend>Images</legend>
+          <%-- TODO: Add ability to preview images. --%>
+          <%-- TODO: Add ability to set multiple images. --%>
+          <input type="text" id="images" name="images" size="100"
+                 value = "<%= t == null || t.images == null || t.images.isEmpty() ? "" : t.images.get(0) %>">
+          </fieldset>
           <input type="submit" value="Save" />
         </form>
       </div>

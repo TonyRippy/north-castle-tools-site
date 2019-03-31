@@ -57,6 +57,7 @@ public class SaveToolServlet extends SaveServlet {
     t.description = s(req, "description");
     t.code = s(req, "code");
     t.location = s(req, "location");
+    t.images = l(req, "images");
     t.writeToDatastore();
 
     // Let the user know the request succeeded, redirect to the view page.
