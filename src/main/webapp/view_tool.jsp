@@ -74,6 +74,30 @@ UserService userService = UserServiceFactory.getUserService();
             <% if (selected.location != null) { %>
               <tr><th>Location:</th><td><%= selected.location %></td></tr>
             <% } %>  
+            <% if (selected.length != null) { %>
+              <tr>
+                <th>Length:</th><td><%= selected.length %></td>
+                <% if (selected.lengthUnit != null) { %>
+                  <td><%= selected.lengthUnit.name %></td>
+                <% } %>  
+              </tr>
+            <% } %>  
+            <% if (selected.width != null) { %>
+              <tr>
+                <th>Width:</th><td><%= selected.width %></td>
+                <% if (selected.widthUnit != null) { %>
+                  <td><%= selected.widthUnit.name %></td>
+                <% } %>  
+              </tr>
+            <% } %>  
+            <% if (selected.height != null) { %>
+              <tr>
+                <th>Height:</th><td><%= selected.height %></td>
+                <% if (selected.heightUnit != null) { %>
+                  <td><%= selected.heightUnit.name %></td>
+                <% } %>  
+              </tr>
+            <% } %>  
           </table>
           <p>
             <%= selected.description == null ? "" : selected.description %>

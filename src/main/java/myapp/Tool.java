@@ -22,6 +22,14 @@ public class Tool extends DataObject<Tool> {
   public String name;
   public String code;
   public String location;
+
+  public Number length;
+  public LengthUnit lengthUnit;
+  public Number width;
+  public LengthUnit widthUnit;
+  public Number height;
+  public LengthUnit heightUnit;
+
   public String description;
   public List<String> images;
   
@@ -68,22 +76,47 @@ public class Tool extends DataObject<Tool> {
     return true;
   }
 
+  private static LengthUnit getLengthUnit(Entity e, String propertyName) {
+    return LengthUnit.byName(getString(e, propertyName));
+  }
+
+  private static void setLengthUnit(Entity.Builder e, String propertyName, LengthUnit value) {
+    setString(e, propertyName, value.name);
+  }
+
   @Override
   protected boolean readAllFields(Entity e) {
     name = getString(e, "name");
-    description = getText(e, "description");
     code = getString(e, "code");
-    location = getString(e, "location");
+    location = getString(e, "location");    
+    
+    length = getNumber(e, "length");
+    lengthUnit = getLengthUnit(e, "lengthUnit");
+    width = getNumber(e, "width");
+    widthUnit = getLengthUnit(e, "widthUnit");
+    height = getNumber(e, "height");
+    heightUnit = getLengthUnit(e, "heightUnit");
+
+    description = getText(e, "description");
     images = getStringList(e, "images");
+
     return true;
   }
 
   @Override
   protected boolean writeAllFields(Entity.Builder e) {
     setString(e, "name", name);
-    setText(e, "description", description);
     setString(e, "code", code);
     setString(e, "location", location);
+    
+    setNumber(e, "length", length);
+    setLengthUnit(e, "lengthUnit", lengthUnit);
+    setNumber(e, "width", width);
+    setLengthUnit(e, "widthUnit", widthUnit);
+    setNumber(e, "height", height);
+    setLengthUnit(e, "heightUnit", heightUnit);
+
+    setText(e, "description", description);
     setStringList(e, "images", images);
     return true;
   }

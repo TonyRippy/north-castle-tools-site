@@ -18,7 +18,7 @@ if (t == null) {
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta http-equiv="content-language" content="en-US">
     <title>Edit Tool</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"> 
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/text.css">
     <link rel="stylesheet" type="text/css" href="/css/960.css">
@@ -88,6 +88,67 @@ if (t == null) {
             <label for="location">Location:</label>
             <input type="text" id="location" name="location"
               value="<%= t == null || t.location == null ? "" : t.location %>">
+          </p>
+          </fieldset>
+          <fieldset>
+          <legend>Measurements</legend>
+          <p>
+            <label for="length">Length:</lablel>
+            <input id="length" name="length" type="number"
+                   value="<%= t == null || t.length == null ? "" : t.length.toString() %>">
+            <%-- TODO(trippy): Turn this into a template! --%>
+            <select id="lengthUnit" name="lengthUnit">
+                <option value="cm"
+                    <% if (t == null || t.lengthUnit == null || t.lengthUnit.name.equals("cm")) { %>
+                      selected
+                    <% } %> >
+                  cm
+                </option>
+                <option value="in"
+                    <% if (t == null || t.lengthUnit == null || t.lengthUnit.name.equals("in")) { %>
+                      selected
+                    <% } %> >
+                  in
+                </option>
+            </select>
+          </p>
+          <p>
+            <label for="width">Width:</lablel>
+            <input id="width" name="width" type="number"
+                   value="<%= t == null || t.width == null ? "" : t.width.toString() %>">
+            <select id="widthUnit" name="widthUnit">
+                <option value="cm"
+                    <% if (t == null || t.widthUnit == null || t.widthUnit.name.equals("cm")) { %>
+                      selected
+                    <% } %> >
+                  cm
+                </option>
+                <option value="in"
+                    <% if (t == null || t.widthUnit == null || t.widthUnit.name.equals("in")) { %>
+                      selected
+                    <% } %> >
+                  in
+                </option>
+            </select>
+          </p>
+          <p>
+            <label for="height">Height:</lablel>
+            <input id="height" name="height" type="number"
+                   value="<%= t == null || t.height == null ? "" : t.height.toString() %>">
+            <select id="heightUnit" name="heightUnit">
+                <option value="cm"
+                    <% if (t == null || t.heightUnit == null || t.heightUnit.equals("cm")) { %>
+                      selected
+                    <% } %> >
+                  cm
+                </option>
+                <option value="in"
+                    <% if (t == null || t.heightUnit == null || t.heightUnit.equals("in")) { %>
+                      selected
+                    <% } %> >
+                  in
+                </option>
+            </select>
           </p>
           </fieldset>
           <fieldset>
