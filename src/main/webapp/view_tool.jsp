@@ -76,26 +76,46 @@ UserService userService = UserServiceFactory.getUserService();
             <% } %>  
             <% if (selected.length != null) { %>
               <tr>
-                <th>Length:</th><td><%= selected.length %></td>
-                <% if (selected.lengthUnit != null) { %>
-                  <td><%= selected.lengthUnit.name %></td>
-                <% } %>  
+                <th>Length:</th>
+                <td>
+                  <%= selected.length %>
+                  <% if (selected.lengthUnit != null) { %>
+                    <%= selected.lengthUnit.name %></td>
+                  <% } %>  
+                </td>
               </tr>
             <% } %>  
             <% if (selected.width != null) { %>
               <tr>
-                <th>Width:</th><td><%= selected.width %></td>
-                <% if (selected.widthUnit != null) { %>
-                  <td><%= selected.widthUnit.name %></td>
-                <% } %>  
+                <th>Width:</th>
+                <td>
+                  <%= selected.width %>
+                  <% if (selected.widthUnit != null) { %>
+                    <%= selected.widthUnit.name %>
+                  <% } %>
+                </td>
               </tr>
             <% } %>  
             <% if (selected.height != null) { %>
               <tr>
-                <th>Height:</th><td><%= selected.height %></td>
-                <% if (selected.heightUnit != null) { %>
-                  <td><%= selected.heightUnit.name %></td>
-                <% } %>  
+                <th>Height:</th>
+                <td>
+                  <%= selected.height %>
+                  <% if (selected.heightUnit != null) { %>
+                    <%= selected.heightUnit.name %>
+                  <% } %>  
+                </td>
+              </tr>
+            <% } %>  
+            <% if (selected.weight != null) { %>
+              <tr>
+                <th>Weight:</th>
+                <td>
+                  <%= selected.weight %>
+                  <% if (selected.weightUnit != null) { %>
+                    <%= selected.weightUnit.name %>
+                  <% } %>  
+                </td>
               </tr>
             <% } %>  
           </table>

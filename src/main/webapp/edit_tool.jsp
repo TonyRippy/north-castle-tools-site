@@ -150,6 +150,37 @@ if (t == null) {
                 </option>
             </select>
           </p>
+          <p>
+            <label for="weight">Weight:</lablel>
+            <input id="weight" name="weight" type="number"
+                   value="<%= t == null || t.weight == null ? "" : t.weight.toString() %>">
+            <select id="weightUnit" name="weightUnit">
+                <option value="g"
+                    <% if (t == null || t.weightUnit == null || t.weightUnit.equals("g")) { %>
+                      selected
+                    <% } %> >
+                  g
+                </option>
+                <option value="kg"
+                    <% if (t == null || t.weightUnit == null || t.weightUnit.equals("kg")) { %>
+                      selected
+                    <% } %> >
+                  kg
+                </option>
+                <option value="oz"
+                    <% if (t == null || t.weightUnit == null || t.weightUnit.equals("oz")) { %>
+                      selected
+                    <% } %> >
+                  oz
+                </option>
+                <option value="lb"
+                    <% if (t == null || t.weightUnit == null || t.weightUnit.equals("lb")) { %>
+                      selected
+                    <% } %> >
+                  lb
+                </option>
+            </select>
+          </p>
           </fieldset>
           <fieldset>
           <legend>Description</legend>

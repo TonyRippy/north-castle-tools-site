@@ -63,6 +63,8 @@ public class SaveToolServlet extends SaveServlet {
     t.widthUnit = LengthUnit.byName(s(req, "widthUnit"));
     t.height = n(req, "height");
     t.heightUnit = LengthUnit.byName(s(req, "heightUnit"));
+    t.weight = n(req, "weight");
+    t.weightUnit = WeightUnit.byName(s(req, "weightUnit"));
 
     t.description = s(req, "description");
     t.images = l(req, "images");

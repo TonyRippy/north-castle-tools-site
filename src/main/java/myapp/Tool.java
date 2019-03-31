@@ -29,6 +29,8 @@ public class Tool extends DataObject<Tool> {
   public LengthUnit widthUnit;
   public Number height;
   public LengthUnit heightUnit;
+  public Number weight;
+  public WeightUnit weightUnit;
 
   public String description;
   public List<String> images;
@@ -84,6 +86,14 @@ public class Tool extends DataObject<Tool> {
     setString(e, propertyName, value.name);
   }
 
+  private static WeightUnit getWeightUnit(Entity e, String propertyName) {
+    return WeightUnit.byName(getString(e, propertyName));
+  }
+
+  private static void setWeightUnit(Entity.Builder e, String propertyName, WeightUnit value) {
+    setString(e, propertyName, value.name);
+  }
+
   @Override
   protected boolean readAllFields(Entity e) {
     name = getString(e, "name");
@@ -96,7 +106,9 @@ public class Tool extends DataObject<Tool> {
     widthUnit = getLengthUnit(e, "widthUnit");
     height = getNumber(e, "height");
     heightUnit = getLengthUnit(e, "heightUnit");
-
+    weight = getNumber(e, "weight");
+    weightUnit = getWeightUnit(e, "weightUnit");
+    
     description = getText(e, "description");
     images = getStringList(e, "images");
 
@@ -115,6 +127,8 @@ public class Tool extends DataObject<Tool> {
     setLengthUnit(e, "widthUnit", widthUnit);
     setNumber(e, "height", height);
     setLengthUnit(e, "heightUnit", heightUnit);
+    setNumber(e, "weight", weight);
+    setWeightUnit(e, "weightUnit", weightUnit);
 
     setText(e, "description", description);
     setStringList(e, "images", images);
