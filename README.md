@@ -25,13 +25,14 @@ A web site dedicated to documenting tools collected by the North Castle Historic
 To run the application locally, use the [Maven App Engine
 plugin](https://cloud.google.com/appengine/docs/java/tools/using-maven).
 
+    gcloud beta emulators datastore start --host-port=localhost:9999 &
     mvn clean appengine:run
 
 View the app at [localhost:8080](http://localhost:8080).
 
 To deploy the app to App Engine, run
 
-    mvn clean appengine:deploy
+    mvn appengine:deploy
 
 After the deploy finishes, you can view the application at
 https://north-castle-tools-site.appspot.com.  You can see the new
