@@ -1,0 +1,12 @@
+[
+  {
+    "origin": [
+      "https://northcastlehistoricaltools.org",
+      "https://north-castle-tools-site.appspot.com",
+      "http://bigbox:8088"
+    ],
+    "responseHeader": ["Content-Type"],
+    "method": ["GET", "HEAD"],
+    "maxAgeSeconds": 3600
+  }
+]
