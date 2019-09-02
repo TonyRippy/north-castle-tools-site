@@ -34,6 +34,7 @@
           <a href="/">Home</a>
           &gt;
         </div>
+        <h1>Contact Information</h1>
         <p>
           TODO
         </p>

@@ -34,6 +34,7 @@
           <a href="/">Home</a>
           &gt;
         </div>
+        <h1>Thorne Collection</h1>
         <p>
           TODO
         </p>
