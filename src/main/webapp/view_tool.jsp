@@ -40,7 +40,7 @@ UserService userService = UserServiceFactory.getUserService();
         padding-right: 20px;
       }
       img {
-        width: 90%;
+        width: 100%;
       }
     </style>
   </head>
@@ -70,10 +70,15 @@ UserService userService = UserServiceFactory.getUserService();
         </div>
         <div class="grid_6 alpha">
           <h1><%= selectedTool.name %></h1>
+          <p>
+            <%= selectedTool.description == null ? "" : selectedTool.description %>
+          </p>
+          <h2>Catalog Items:</h2>
+          <h3>
+            Item <%= selectedTool.code %>
+            (<%= selectedTool.name %>)
+          </h3>
           <table>
-            <% if (selectedTool.code != null) { %>
-              <tr><th>Code:</th><td><%= selectedTool.code %></td></tr>
-            <% } %>  
             <% if (selectedTool.location != null) { %>
               <tr><th>Location:</th><td><%= selectedTool.location %></td></tr>
             <% } %>  
@@ -121,10 +126,7 @@ UserService userService = UserServiceFactory.getUserService();
                 </td>
               </tr>
             <% } %>  
-          </table>
-          <p>
-            <%= selectedTool.description == null ? "" : selectedTool.description %>
-          </p>
+          </table>          
         </div>
         <div class="grid_3 omega">
           <% if (selectedTool.images != null) { %>
