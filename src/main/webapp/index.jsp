@@ -54,11 +54,13 @@
         <p>
         The following is a list of the different types of tools collected by the
         North Castle Historical Society:
-        </p>    
+        </p>
+        <center>
         <img src="images/tavern.jpg"/>
         <p>
           440 Bedford Rd, Armonk, NY 10504
         </p>
+        </center>
       </div>
       <div class="clear"></div>
     </div>
