@@ -32,10 +32,10 @@
       <div id="sl-header">
         <h1>Historic Tools of North Castle</h1>
       </div>
-      <div id="sl-sidemenu" class="grid_3">
+      <div id="sl-sidemenu" class="grid_3 alpha">
         <%@include file="sidebar.jspf" %>
       </div>
-      <div id="sl-content" class="grid_9">
+      <div id="sl-content" class="grid_9 omega">
         <div id="sl-topmenu">
           <ul>
             <li class="selected disabled">About</li>
