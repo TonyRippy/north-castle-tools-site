@@ -1,0 +1,22 @@
+<% { %>
+<ul>
+  <li
+    <% if (selectedGroup == null) { %>
+      class="selected disabled"
+    <% } %>
+    >
+    <a href="/">Home</a>
+  </li>
+  <% for (ToolGroup g : ToolGroup.listAll()) { %>
+    <li
+      <% if (selectedGroup != null && g.id.equals(selectedGroup.id)) { %>
+      class="selected disabled">
+      <% } %>
+      >
+      <a href="/group/<%= g.id %>">
+        <%= g.name %>
+      </a>
+    </li>
+  <% } %>
+</ul>
+<% } %>

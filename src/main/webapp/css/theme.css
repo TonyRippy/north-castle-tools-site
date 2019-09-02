@@ -1,6 +1,101 @@
+:root {
+    /* Theme colors, drawn from Smith's Tavern image: */
+  --paper-color: rgb(234,211,162);
+  --brown-color: rgb(102,73,26);
+  --red-color:   rgb(194,57,27);
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12pt;
-  background: rgb(234,211,162) url('../images/bg.jpg');
+  background: var(--paper-color) url('../images/bg.jpg');
 }
 
+#sl-header h1 {
+  font-size: 24pt;
+  text-align: center;
+}
+
+#sl-sidemenu {
+  display: block;
+  margin-bottom: 1em;
+}
+#sl-sidemenu ul {
+  list-style: none;
+  margin: 0 auto;
+}
+#sl-sidemenu li {
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-decoration: none;
+}
+#sl-sidemenu li.selected {
+  color: var(--brown-color);
+}
+#sl-sidemenu li.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+#sl-sidemenu li a {
+  color: inherit;
+  text-decoration: inherit;
+}
+#sl-sidemenu li a:visited {
+  color: inherit;
+  text-decoration: inherit;
+}
+#sl-sidemenu li a:hover {
+  color: var(--red-color);
+  text-decoration: inherit;
+}
+
+#sl-topmenu {
+  display: table;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+#sl-topmenu ul {
+  list-style: none;
+  margin: 0 auto;
+}
+#sl-topmenu li {
+  display: inline;
+  margin: 0 20px 0 0;
+  font-weight: bold;
+  text-decoration: none;
+}
+#sl-topmenu li.selected {
+  color: var(--brown-color);
+}
+#sl-topmenu li.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+#sl-topmenu li a {
+  color: inherit;
+  text-decoration: inherit;
+}
+#sl-topmenu li a:visited {
+  color: inherit;
+  text-decoration: inherit;
+}
+#sl-topmenu li a:hover {
+  color: var(--red-color);
+  text-decoration: inherit;
+}
+
+#sl-navlink {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: smaller;
+}
+#sl-navlink a {
+  text-decoration: none;
+}
+#sl-navlink a:hover {
+  text-decoration: underline;
+}
+#sl-navlink a:visited {
+  color: inherit;
+}

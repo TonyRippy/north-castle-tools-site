@@ -1,14 +1,9 @@
 <%-- //[START all]--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="myapp.ToolGroup" %>
-<%@ page import="com.google.appengine.api.users.UserService" %>
-<%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
-
 <%
-  UserService userService = UserServiceFactory.getUserService();
   ToolGroup selectedGroup = null;
 %>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -20,12 +15,6 @@
     <link rel="stylesheet" type="text/css" href="/css/text.css">
     <link rel="stylesheet" type="text/css" href="/css/960.css">
     <link rel="stylesheet" type="text/css" href="/css/theme.css">
-    <style type="text/css">
-      #admin {
-        float: right;
-        padding-right: 20px;
-      }
-    </style>
   </head>
   <body>
     <div id="sl-container" class="container_12">
@@ -38,28 +27,13 @@
       <div id="sl-content" class="grid_9">
         <div id="sl-topmenu">
           <ul>
-            <li class="selected disabled">About</li>
+            <li><a href="/">About</a></li>
             <li><a href="/thorne">Thorne Collection</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li class="selected disabled">Contact</li>
           </ul>
         </div>
-        <% if (userService.isUserLoggedIn() && userService.isUserAdmin()) { %>
-        <div id="admin">
-          <a href="/__edit__/group/">
-            Add new tool group.
-          </a>
-        </div>
-        <% } %>
         <p>
-          Welcome!
-        </p>
-        <p>
-        The following is a list of the different types of tools collected by the
-        North Castle Historical Society:
-        </p>    
-        <img src="images/tavern.jpg"/>
-        <p>
-          440 Bedford Rd, Armonk, NY 10504
+          TODO
         </p>
       </div>
       <div class="clear"></div>
