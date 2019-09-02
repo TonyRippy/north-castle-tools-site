@@ -30,6 +30,10 @@
             <li class="selected disabled">Contact</li>
           </ul>
         </div>
+        <div id="sl-navlink">
+          <a href="/">Home</a>
+          &gt;
+        </div>
         <p>
           TODO
         </p>

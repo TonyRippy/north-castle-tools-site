@@ -57,6 +57,10 @@ UserService userService = UserServiceFactory.getUserService();
           </a>
         </div>
         <% } %>
+        <div id="sl-navlink">
+          <a href="/">Home</a>
+          &gt;
+        </div>
         <div>
           <h1><%= selectedGroup.name %></h1>
           <%--
