@@ -6,17 +6,17 @@
 <%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
 
 <%
-Tool selected = Tool.forPath(request.getPathInfo());
-if (selected == null) {
+Tool selectedTool = Tool.forPath(request.getPathInfo());
+if (selectedTool == null) {
   response.sendError(HttpServletResponse.SC_BAD_REQUEST);
   return;
 }
-if (!selected.readFromDatastore()) {
+if (!selectedTool.readFromDatastore()) {
   response.sendError(HttpServletResponse.SC_NOT_FOUND);
   return;
 }
-ToolGroup toolGroup = new ToolGroup(selected.toolGroupId);
-if (!toolGroup.readFromDatastore()) {
+ToolGroup selectedGroup = new ToolGroup(selectedTool.toolGroupId);
+if (!selectedGroup.readFromDatastore()) {
   response.sendError(HttpServletResponse.SC_NOT_FOUND);
   return;
 }
@@ -28,7 +28,7 @@ UserService userService = UserServiceFactory.getUserService();
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta http-equiv="content-language" content="en-US">
-    <title>Historic Tools of North Castle - <%= selected.name %></title>
+    <title>Historic Tools of North Castle - <%= selectedTool.name %></title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"> 
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/text.css">
@@ -46,14 +46,16 @@ UserService userService = UserServiceFactory.getUserService();
   </head>
   <body>
     <div id="sl-container" class="container_12">
-      <div id="sl-header" class="grid_12">
+      <div id="sl-header">
         <h1>Historic Tools of North Castle</h1>
       </div>
-      <div class="clear"></div>
-      <div id="sl-content" class="grid_12">
+      <div id="sl-sidemenu" class="grid_3 alpha">
+        <%@include file="sidebar.jspf" %>
+      </div>
+      <div id="sl-content" class="grid_9 omega">
         <% if (userService.isUserLoggedIn() && userService.isUserAdmin()) { %>
         <div id="admin">
-          <a href="/__edit__/tool/<%= selected.toolGroupId %>/">
+          <a href="/__edit__/tool/<%= selectedTool.toolGroupId %>/">
             Add new record.
           </a>
           <br>
@@ -63,69 +65,72 @@ UserService userService = UserServiceFactory.getUserService();
         </div>
         <% } %>
         <div id="sl-navlink">
-          <a href="/group/<%= toolGroup.id %>"><b>&larr;</b> <%= toolGroup.name %></a>
+          <a href="/">Home</a>
+          &gt;
+          <a href="/group/<%= selectedGroup.id %>"><%= selectedGroup.name %></a>
+          &gt;
         </div>
-        <div class="grid_7 alpha">
-          <h1><%= selected.name %></h1>
+        <div class="grid_6 alpha">
+          <h1><%= selectedTool.name %></h1>
           <table>
-            <% if (selected.code != null) { %>
-              <tr><th>Code:</th><td><%= selected.code %></td></tr>
+            <% if (selectedTool.code != null) { %>
+              <tr><th>Code:</th><td><%= selectedTool.code %></td></tr>
             <% } %>  
-            <% if (selected.location != null) { %>
-              <tr><th>Location:</th><td><%= selected.location %></td></tr>
+            <% if (selectedTool.location != null) { %>
+              <tr><th>Location:</th><td><%= selectedTool.location %></td></tr>
             <% } %>  
-            <% if (selected.length != null) { %>
+            <% if (selectedTool.length != null) { %>
               <tr>
                 <th>Length:</th>
                 <td>
-                  <%= selected.length %>
-                  <% if (selected.lengthUnit != null) { %>
-                    <%= selected.lengthUnit.name %></td>
+                  <%= selectedTool.length %>
+                  <% if (selectedTool.lengthUnit != null) { %>
+                    <%= selectedTool.lengthUnit.name %></td>
                   <% } %>  
                 </td>
               </tr>
             <% } %>  
-            <% if (selected.width != null) { %>
+            <% if (selectedTool.width != null) { %>
               <tr>
                 <th>Width:</th>
                 <td>
-                  <%= selected.width %>
-                  <% if (selected.widthUnit != null) { %>
-                    <%= selected.widthUnit.name %>
+                  <%= selectedTool.width %>
+                  <% if (selectedTool.widthUnit != null) { %>
+                    <%= selectedTool.widthUnit.name %>
                   <% } %>
                 </td>
               </tr>
             <% } %>  
-            <% if (selected.height != null) { %>
+            <% if (selectedTool.height != null) { %>
               <tr>
                 <th>Height:</th>
                 <td>
-                  <%= selected.height %>
-                  <% if (selected.heightUnit != null) { %>
-                    <%= selected.heightUnit.name %>
+                  <%= selectedTool.height %>
+                  <% if (selectedTool.heightUnit != null) { %>
+                    <%= selectedTool.heightUnit.name %>
                   <% } %>  
                 </td>
               </tr>
             <% } %>  
-            <% if (selected.weight != null) { %>
+            <% if (selectedTool.weight != null) { %>
               <tr>
                 <th>Weight:</th>
                 <td>
-                  <%= selected.weight %>
-                  <% if (selected.weightUnit != null) { %>
-                    <%= selected.weightUnit.name %>
+                  <%= selectedTool.weight %>
+                  <% if (selectedTool.weightUnit != null) { %>
+                    <%= selectedTool.weightUnit.name %>
                   <% } %>  
                 </td>
               </tr>
             <% } %>  
           </table>
           <p>
-            <%= selected.description == null ? "" : selected.description %>
+            <%= selectedTool.description == null ? "" : selectedTool.description %>
           </p>
         </div>
-        <div class="grid_5 omega">
-          <% if (selected.images != null) { %>
-            <% for (String url : selected.images) { %>
+        <div class="grid_3 omega">
+          <% if (selectedTool.images != null) { %>
+            <% for (String url : selectedTool.images) { %>
               <img src="<%= url %>"></img>
             <% } %>  
           <% } %>  
