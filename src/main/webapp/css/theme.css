@@ -1,2 +1,6 @@
-/* TODO: Create initial style sheet. */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+  background: rgb(234,211,162) url('../images/bg.jpg');
+}
 
