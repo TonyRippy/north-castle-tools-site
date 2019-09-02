@@ -41,9 +41,7 @@ UserService userService = UserServiceFactory.getUserService();
   </head>
   <body>
     <div id="sl-container" class="container_12">
-      <div id="sl-header">
-        <h1>Historic Tools of North Castle</h1>
-      </div>
+      <%@include file="header.jspf" %>
       <div id="sl-sidemenu" class="grid_3 alpha">
         <%@include file="sidebar.jspf" %>
       </div>
