@@ -35,6 +35,20 @@ if (t == null) {
         plugins: 'lists, link'
       });
     </script>
+    <script type='text/javascript'>
+      function addImage() {
+        var container = document.getElementById("allimages");
+        // Add a line break
+        container.appendChild(document.createElement("br"));
+        // Append a new empty <input> element
+        var input = document.createElement("input");
+        input.type = "text";
+        input.name = "images";
+        input.size = "100";
+        input.value = "";
+        container.appendChild(input);
+      }
+    </script>
   </head>
   <body>
     <div id="sl-container" class="container_12">
@@ -89,9 +103,17 @@ if (t == null) {
           <fieldset>
           <legend>Images</legend>
           <%-- TODO: Add ability to preview images. --%>
-          <%-- TODO: Add ability to set multiple images. --%>
-          <input type="text" id="images" name="images" size="100"
-                 value = "<%= t == null || t.images == null || t.images.isEmpty() ? "" : t.images.get(0) %>">
+          <div id="allimages">
+            <% if (t != null && t.images != null) { %>
+              <% for (String i : t.images) { %>
+                <input type="text" name="images" size="100" value="<%= i %>">
+              <% } %>
+            <% } else { %>
+              <input type="text" name="images" size="100" value="">
+            <% } %>
+          </div>
+          <br/>
+          <a href="#" id="addimage" onclick="addImage()">Add Another Image</a>
           </fieldset>
           <input type="submit" value="Save" />
         </form>
