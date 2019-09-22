@@ -43,7 +43,6 @@ public class SaveToolGroupServlet extends SaveServlet {
     // Read the rest of the fields and save the record.
     g.name = s(req, "name");
     g.description = s(req, "description");
-    g.order = n(req, "order");
     g.writeToDatastore();
 
     // Let the user know the request succeeded, redirect to the view page.

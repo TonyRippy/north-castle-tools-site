@@ -63,11 +63,6 @@ if (g == null) {
             <input type="text" id="name" name="name"
               value="<%= g == null || g.name == null ? "" : g.name %>">
           </p>
-          <p>
-            <label for="order">Sort Order:</label>
-            <input type="number" id="order" name="order"
-              value="<%= g == null || g.order == null ? "" : g.order %>">
-          </p>
           </fieldset>
           <fieldset>
           <legend>Description</legend>
