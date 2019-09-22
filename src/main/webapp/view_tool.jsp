@@ -77,6 +77,7 @@ UserService userService = UserServiceFactory.getUserService();
           <p>
             <%= selectedTool.description == null ? "" : selectedTool.description %>
           </p>
+          <% if (userService.isUserLoggedIn() && userService.isUserAdmin()) { %>
           <div class="admin">
             <a href="<%= "/__edit__/item"
                          + request.getPathInfo() + "/"
@@ -84,8 +85,10 @@ UserService userService = UserServiceFactory.getUserService();
               Add new item.
             </a>
           </div>
+          <% } %>
           <h2>Catalog Items:</h2>
             <% for (Item item : selectedTool.items) { %>
+            <% if (userService.isUserLoggedIn() && userService.isUserAdmin()) { %>
             <div class="admin">
               <a href="<%= "/__edit__/item"
                            + request.getPathInfo() + "/"
@@ -93,6 +96,7 @@ UserService userService = UserServiceFactory.getUserService();
                 Edit this item.
               </a>
             </div>
+            <% } %>
             <h3>
               Item
               <% if (item.code != null) { %>
