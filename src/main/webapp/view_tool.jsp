@@ -43,6 +43,9 @@ UserService userService = UserServiceFactory.getUserService();
       img {
         width: 100%;
       }
+      h3 {
+        margin-bottom: 0;
+      }
     </style>
   </head>
   <body>
