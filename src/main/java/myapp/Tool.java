@@ -10,6 +10,7 @@ import com.google.cloud.datastore.KeyFactory;
 import com.google.cloud.datastore.PathElement;
 import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
+import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,21 +20,12 @@ public class Tool extends DataObject<Tool> {
   
   public String id;
   public String toolGroupId;  
+
   public String name;
-  public String code;
-  public String location;
-
-  public Number length;
-  public LengthUnit lengthUnit;
-  public Number width;
-  public LengthUnit widthUnit;
-  public Number height;
-  public LengthUnit heightUnit;
-  public Number weight;
-  public WeightUnit weightUnit;
-
   public String description;
   public List<String> images;
+
+  public List<Item> items;
   
   public Tool(String id, String toolGroupId) {
     this.id = id;
@@ -78,60 +70,43 @@ public class Tool extends DataObject<Tool> {
     return true;
   }
 
-  private static LengthUnit getLengthUnit(Entity e, String propertyName) {
-    return LengthUnit.byName(getString(e, propertyName));
-  }
-
-  private static void setLengthUnit(Entity.Builder e, String propertyName, LengthUnit value) {
-    setString(e, propertyName, value.name);
-  }
-
-  private static WeightUnit getWeightUnit(Entity e, String propertyName) {
-    return WeightUnit.byName(getString(e, propertyName));
-  }
-
-  private static void setWeightUnit(Entity.Builder e, String propertyName, WeightUnit value) {
-    setString(e, propertyName, value.name);
-  }
-
   @Override
   protected boolean readAllFields(Entity e) {
     name = getString(e, "name");
-    code = getString(e, "code");
-    location = getString(e, "location");    
-    
-    length = getNumber(e, "length");
-    lengthUnit = getLengthUnit(e, "lengthUnit");
-    width = getNumber(e, "width");
-    widthUnit = getLengthUnit(e, "widthUnit");
-    height = getNumber(e, "height");
-    heightUnit = getLengthUnit(e, "heightUnit");
-    weight = getNumber(e, "weight");
-    weightUnit = getWeightUnit(e, "weightUnit");
-    
     description = getText(e, "description");
     images = getStringList(e, "images");
-
     return true;
   }
 
   @Override
   protected boolean writeAllFields(Entity.Builder e) {
     setString(e, "name", name);
-    setString(e, "code", code);
-    setString(e, "location", location);
-    
-    setNumber(e, "length", length);
-    setLengthUnit(e, "lengthUnit", lengthUnit);
-    setNumber(e, "width", width);
-    setLengthUnit(e, "widthUnit", widthUnit);
-    setNumber(e, "height", height);
-    setLengthUnit(e, "heightUnit", heightUnit);
-    setNumber(e, "weight", weight);
-    setWeightUnit(e, "weightUnit", weightUnit);
-
     setText(e, "description", description);
     setStringList(e, "images", images);
+    return true;
+  }
+
+  @Override
+  protected boolean readFromDatastore(Datastore datastore) {
+    // Load this record's fields.
+    if (!super.readFromDatastore(datastore)) {
+      return false;
+    }
+    // Also load the list of catalog items that are part of this tool.
+    items = new ArrayList<>();
+    Query<Entity> query = Query.newEntityQueryBuilder()
+      .setKind(Item.KIND)
+      .setFilter(PropertyFilter.hasAncestor(
+          buildKey(datastore.newKeyFactory())))
+      .build();
+    QueryResults<Entity> results = datastore.run(query);
+    while (results.hasNext()) {
+      Entity e = results.next();
+      Item item  = new Item(toolGroupId, id, Integer.parseInt(e.getKey().getName()));
+      if (item.readAllFields(e)) {
+        items.add(item);
+      }
+    }
     return true;
   }
 

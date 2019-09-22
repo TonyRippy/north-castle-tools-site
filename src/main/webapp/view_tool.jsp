@@ -1,5 +1,6 @@
 <%-- //[START all]--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="myapp.Item" %>
 <%@ page import="myapp.Tool" %>
 <%@ page import="myapp.ToolGroup" %>
 <%@ page import="com.google.appengine.api.users.UserService" %>
@@ -35,7 +36,7 @@ UserService userService = UserServiceFactory.getUserService();
     <link rel="stylesheet" type="text/css" href="/css/960.css">
     <link rel="stylesheet" type="text/css" href="/css/theme.css">
     <style type="text/css">
-      #admin {
+      .admin {
         float: right;
         padding-right: 20px;
       }
@@ -52,7 +53,7 @@ UserService userService = UserServiceFactory.getUserService();
       </div>
       <div id="sl-content" class="grid_9 omega">
         <% if (userService.isUserLoggedIn() && userService.isUserAdmin()) { %>
-        <div id="admin">
+        <div class="admin">
           <a href="/__edit__/tool/<%= selectedTool.toolGroupId %>/">
             Add new record.
           </a>
@@ -73,60 +74,86 @@ UserService userService = UserServiceFactory.getUserService();
           <p>
             <%= selectedTool.description == null ? "" : selectedTool.description %>
           </p>
+          <div class="admin">
+            <a href="<%= "/__edit__/item"
+                         + request.getPathInfo() + "/"
+                         + Integer.toString(selectedTool.items.size()) %>">
+              Add new item.
+            </a>
+          </div>
           <h2>Catalog Items:</h2>
-          <h3>
-            Item <%= selectedTool.code %>
-            (<%= selectedTool.name %>)
-          </h3>
-          <table>
-            <% if (selectedTool.location != null) { %>
-              <tr><th>Location:</th><td><%= selectedTool.location %></td></tr>
-            <% } %>  
-            <% if (selectedTool.length != null) { %>
-              <tr>
-                <th>Length:</th>
-                <td>
-                  <%= selectedTool.length %>
-                  <% if (selectedTool.lengthUnit != null) { %>
-                    <%= selectedTool.lengthUnit.name %></td>
-                  <% } %>  
-                </td>
-              </tr>
-            <% } %>  
-            <% if (selectedTool.width != null) { %>
-              <tr>
-                <th>Width:</th>
-                <td>
-                  <%= selectedTool.width %>
-                  <% if (selectedTool.widthUnit != null) { %>
-                    <%= selectedTool.widthUnit.name %>
-                  <% } %>
-                </td>
-              </tr>
-            <% } %>  
-            <% if (selectedTool.height != null) { %>
-              <tr>
-                <th>Height:</th>
-                <td>
-                  <%= selectedTool.height %>
-                  <% if (selectedTool.heightUnit != null) { %>
-                    <%= selectedTool.heightUnit.name %>
-                  <% } %>  
-                </td>
-              </tr>
-            <% } %>  
-            <% if (selectedTool.weight != null) { %>
-              <tr>
+            <% for (Item item : selectedTool.items) { %>
+            <div class="admin">
+              <a href="<%= "/__edit__/item"
+                           + request.getPathInfo() + "/"
+                           + Integer.toString(item.index) %>">
+                Edit this item.
+              </a>
+            </div>
+            <h3>
+              Item
+              <% if (item.code != null) { %>
+                <%= item.code %>
+              <% } else { %>
+                #<%= item.index + 1 %><%-- count from one instead of zero... --%>  
+              <% } %>
+              <% if (item.name != null) { %>
+                (<%= item.name %>)
+              <% } %>              
+            </h3>
+            <table>
+              <% if (item.location != null) { %>
+                <tr><th>Location:</th><td><%= item.location %></td></tr>
+              <% } %>  
+              <% if (item.length != null) { %>
+                <tr>
+                  <th>Length:</th>
+                  <td>
+                    <%= item.length %>
+                    <% if (item.lengthUnit != null) { %>
+                      <%= item.lengthUnit.name %></td>
+                    <% } %>  
+                  </td>
+                </tr>
+              <% } %>  
+              <% if (item.width != null) { %>
+                <tr>
+                  <th>Width:</th>
+                  <td>
+                    <%= item.width %>
+                    <% if (item.widthUnit != null) { %>
+                      <%= item.widthUnit.name %>
+                    <% } %>
+                  </td>
+                </tr>
+              <% } %>  
+              <% if (item.height != null) { %>
+                <tr>
+                  <th>Height:</th>
+                  <td>
+                    <%= item.height %>
+                    <% if (item.heightUnit != null) { %>
+                      <%= item.heightUnit.name %>
+                    <% } %>  
+                  </td>
+                </tr>
+              <% } %>  
+              <% if (item.weight != null) { %>
+                <tr>
                 <th>Weight:</th>
-                <td>
-                  <%= selectedTool.weight %>
-                  <% if (selectedTool.weightUnit != null) { %>
-                    <%= selectedTool.weightUnit.name %>
-                  <% } %>  
-                </td>
-              </tr>
-            <% } %>  
-          </table>          
+                  <td>
+                    <%= item.weight %>
+                    <% if (item.weightUnit != null) { %>
+                    <%= item.weightUnit.name %>
+                    <% } %>  
+                  </td>
+                </tr>
+              <% } %>  
+            </table>          
+            <% if (item.description != null) { %>
+              <p><%= item.description %></p>
+            <% } %>
+          <% } %>  
         </div>
         <div class="grid_3 omega">
           <% if (selectedTool.images != null) { %>

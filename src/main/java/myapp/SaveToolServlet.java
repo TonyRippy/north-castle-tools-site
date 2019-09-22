@@ -54,6 +54,7 @@ public class SaveToolServlet extends SaveServlet {
 
     // Read the rest of the fields and save the record.
     t.name = s(req, "name");
+    /*
     t.code = s(req, "code");
     t.location = s(req, "location");
     
@@ -65,7 +66,7 @@ public class SaveToolServlet extends SaveServlet {
     t.heightUnit = LengthUnit.byName(s(req, "heightUnit"));
     t.weight = n(req, "weight");
     t.weightUnit = WeightUnit.byName(s(req, "weightUnit"));
-
+    */
     t.description = s(req, "description");
     t.images = l(req, "images");
     t.writeToDatastore();
