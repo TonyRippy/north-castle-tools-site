@@ -12,6 +12,7 @@ import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,8 +44,8 @@ public class Tool extends DataObject<Tool> {
     if (index < 0) {
       return null;
     }
-    String toolGroupId = path.substring(1, index);
-    String toolId = path.substring(index + 1);
+    String toolGroupId = URLDecoder.decode(path.substring(1, index));
+    String toolId = URLDecoder.decode(path.substring(index + 1));
     return new Tool(toolId, toolGroupId);
   }
 

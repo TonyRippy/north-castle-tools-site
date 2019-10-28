@@ -12,6 +12,7 @@ import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class ToolGroup extends DataObject<ToolGroup> {
       return null;
     }
     // Remove the leading slash from the path.
-    String toolGroupId = path.substring(1); 
+    String toolGroupId = URLDecoder.decode(path.substring(1));
     return new ToolGroup(toolGroupId);
   }
 

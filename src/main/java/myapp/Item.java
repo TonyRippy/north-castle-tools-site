@@ -11,6 +11,7 @@ import com.google.cloud.datastore.PathElement;
 import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
 
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,8 +58,8 @@ public class Item extends DataObject<Item> {
     if (slash2 < 0) {
       return null;
     }
-    String toolGroupId = path.substring(1, slash1);
-    String toolId = path.substring(slash1 + 1, slash2);
+    String toolGroupId = URLDecoder.decode(path.substring(1, slash1));
+    String toolId = URLDecoder.decode(path.substring(slash1 + 1, slash2));
     int index = Integer.parseInt(path.substring(slash2 + 1));
     return new Item(toolGroupId, toolId, index);
   }
