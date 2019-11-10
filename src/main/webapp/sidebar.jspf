@@ -1,3 +1,4 @@
+<%@ page import="java.net.URLEncoder" %>
 <% { %>
 <ul>
   <li
@@ -13,7 +14,7 @@
         class="selected disabled"
       <% } %>
       >
-      <a href="/group/<%= g.id %>">
+      <a href="/group/<%= URLEncoder.encode(g.id) %>">
         <%= g.name %>
       </a>
     </li>

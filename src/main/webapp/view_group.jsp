@@ -4,6 +4,7 @@
 <%@ page import="myapp.ToolGroup" %>
 <%@ page import="com.google.appengine.api.users.UserService" %>
 <%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
+<%@ page import="java.net.URLEncoder" %>
 
 <%
 ToolGroup selectedGroup = ToolGroup.forPath(request.getPathInfo());
@@ -52,7 +53,7 @@ UserService userService = UserServiceFactory.getUserService();
             Edit this tool group.
           </a>
           <br>
-          <a href="/__edit__/tool/<%= selectedGroup.id %>/">
+          <a href="/__edit__/tool/<%= URLEncoder.encode(selectedGroup.id) %>/">
             Add new tool to this group.
           </a>
         </div>
@@ -76,7 +77,7 @@ UserService userService = UserServiceFactory.getUserService();
           <ul>
             <% for (Tool t : selectedGroup.tools) { %>
             <li>
-              <a href="/tool/<%= t.toolGroupId %>/<%= t.id %>">
+              <a href="/tool/<%= URLEncoder.encode(t.toolGroupId) %>/<%= URLEncoder.encode(t.id) %>">
                 <%= t.name == null ? "" : t.name %>
               </a>
             </li>

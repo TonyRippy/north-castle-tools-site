@@ -1,6 +1,7 @@
 <%-- //[START all]--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="myapp.Tool" %>
+<%@ page import="java.net.URLEncoder" %>
 
 <!doctype html>
 <html lang="en">
@@ -27,7 +28,7 @@
         <ul>
           <% for (Tool t : Tool.listAll()) { %>
           <li>
-            <a href="/tool/<%= t.toolGroupId %>/<%= t.id %>">
+            <a href="/tool/<%= URLEncoder.encode(t.toolGroupId) %>/<%= URLEncoder.encode(t.id) %>">
               <%= t.name == null ? "" : t.name %>
             </a>
           </li>

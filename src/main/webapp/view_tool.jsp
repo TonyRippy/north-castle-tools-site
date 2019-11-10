@@ -5,6 +5,7 @@
 <%@ page import="myapp.ToolGroup" %>
 <%@ page import="com.google.appengine.api.users.UserService" %>
 <%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
+<%@ page import="java.net.URLEncoder" %>
 
 <%
 Tool selectedTool = Tool.forPath(request.getPathInfo());
@@ -57,7 +58,7 @@ UserService userService = UserServiceFactory.getUserService();
       <div id="sl-content" class="grid_9 omega">
         <% if (userService.isUserLoggedIn() && userService.isUserAdmin()) { %>
         <div class="admin">
-          <a href="/__edit__/tool/<%= selectedTool.toolGroupId %>/">
+          <a href="/__edit__/tool/<%= URLEncoder.encode(selectedTool.toolGroupId) %>/">
             Add new record.
           </a>
           <br>
@@ -69,7 +70,7 @@ UserService userService = UserServiceFactory.getUserService();
         <div id="sl-navlink">
           <a href="/">Home</a>
           &gt;
-          <a href="/group/<%= selectedGroup.id %>"><%= selectedGroup.name %></a>
+          <a href="/group/<%= URLEncoder.encode(selectedGroup.id) %>"><%= selectedGroup.name %></a>
           &gt;
         </div>
         <div class="grid_6 alpha">
