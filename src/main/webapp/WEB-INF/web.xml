@@ -25,10 +25,6 @@
         <servlet-class>myapp.SaveToolGroupServlet</servlet-class>
     </servlet>
     <servlet>
-      <servlet-name>list-tools</servlet-name>
-      <jsp-file>/list_tools.jsp</jsp-file>
-    </servlet>
-    <servlet>
         <servlet-name>view-tool</servlet-name>
         <jsp-file>/view_tool.jsp</jsp-file>
     </servlet>
@@ -71,10 +67,6 @@
     <servlet-mapping>
         <servlet-name>save-group</servlet-name>
         <url-pattern>/__save__/group</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>list-tools</servlet-name>
-        <url-pattern>/all</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>view-tool</servlet-name>
