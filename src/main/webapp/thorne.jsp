@@ -45,9 +45,9 @@
       <div id="sl-content" class="grid_9 omega">
         <div id="sl-topmenu">
           <ul>
-            <li><a href="/">About</a></li>
+            <li><a href="/">Welcome</a></li>
             <li class="selected disabled">Thorne Collection</li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="/about">About</a></li>
           </ul>
         </div>
         <div id="sl-navlink">

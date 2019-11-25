@@ -36,9 +36,9 @@
       <div id="sl-content" class="grid_9 omega">
         <div id="sl-topmenu">
           <ul>
-            <li class="selected disabled">About</li>
+            <li class="selected disabled">Welcome</li>
             <li><a href="/thorne">Thorne Collection</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="/about">About</a></li>
           </ul>
         </div>
         <% if (userService.isUserLoggedIn() && userService.isUserAdmin()) { %>

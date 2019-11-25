@@ -9,8 +9,8 @@
       <jsp-file>/thorne.jsp</jsp-file>
     </servlet>
     <servlet>
-      <servlet-name>contact</servlet-name>
-      <jsp-file>/contact.jsp</jsp-file>
+      <servlet-name>about</servlet-name>
+      <jsp-file>/about.jsp</jsp-file>
     </servlet>
     <servlet>
       <servlet-name>view-group</servlet-name>
@@ -53,8 +53,8 @@
         <url-pattern>/thorne</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>contact</servlet-name>
-        <url-pattern>/contact</url-pattern>
+        <servlet-name>about</servlet-name>
+        <url-pattern>/about</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>view-group</servlet-name>
