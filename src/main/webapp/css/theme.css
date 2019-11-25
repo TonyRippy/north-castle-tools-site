@@ -8,7 +8,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12pt;
-  background: var(--paper-color) url('../images/bg.jpg');
+  background: var(--paper-color) url('../img/bg.jpg');
 }
 
 #sl-header h1 {

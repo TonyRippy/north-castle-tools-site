@@ -56,7 +56,7 @@
         North Castle Historical Society:
         </p>
         <center>
-        <img src="images/tavern.jpg"/>
+        <img src="img/tavern.jpg"/>
         <p>
           440 Bedford Rd, Armonk, NY 10504
         </p>

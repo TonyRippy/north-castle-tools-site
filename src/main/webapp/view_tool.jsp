@@ -36,6 +36,7 @@ UserService userService = UserServiceFactory.getUserService();
     <link rel="stylesheet" type="text/css" href="/css/text.css">
     <link rel="stylesheet" type="text/css" href="/css/960.css">
     <link rel="stylesheet" type="text/css" href="/css/theme.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.css">
     <style type="text/css">
       .admin {
         float: right;
@@ -48,6 +49,10 @@ UserService userService = UserServiceFactory.getUserService();
         margin-bottom: 0;
       }
     </style>
+    <script src="/js/lightgallery.min.js"></script>
+    <script src="/js/lg-fullscreen.min.js"></script>
+    <script src="/js/lg-zoom.min.js"></script>
+    <script src="/js/lg-thumbnail.min.js"></script>
   </head>
   <body>
     <div id="sl-container" class="container_12">
@@ -163,13 +168,18 @@ UserService userService = UserServiceFactory.getUserService();
             <% } %>
           <% } %>  
         </div>
-        <div class="grid_3 omega">
+        <div id="gallery" class="grid_3 omega">
           <% if (selectedTool.images != null) { %>
             <% for (String url : selectedTool.images) { %>
-              <img src="<%= url %>"></img>
+              <a href="<%= url %>">
+                <img src="<%= url %>"></img>
+              </a>
             <% } %>  
           <% } %>  
         </div>
+        <script>
+          lightGallery(document.getElementById('gallery'));
+        </script>
       </div>
     </div>
   </body>
