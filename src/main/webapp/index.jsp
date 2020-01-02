@@ -57,6 +57,14 @@
           including trades such as wagon making, ice harvesting, cobbling,
           coopering and farming.
         </p>
+        <p>
+          You may view the complete list of tools by clicking on the
+          <a href="/thorne">Thorne Collection</a> link at the top of the
+          page. You may learn more about the collection and the project to
+          digitally catalog it using the <a href="/about">About</a> link. You
+          may explore the different categories of tools by clicking the links on
+          the left-hand side of the page.
+        </p>
         <center>
         <img src="img/tavern.jpg"/>
         <p>

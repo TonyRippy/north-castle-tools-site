@@ -35,7 +35,7 @@
           &gt;
         </div>
         <h1>The John Norris Thorne, Jr. Collection</h1>
-        <h2>Early Tools and Household Utensils and Farm Implements</h2>
+        <h3>Early Tools and Household Utensils and Farm Implements</h3>
         <p>
           Mr. John Norrish Thorne, Jr. was an avid collector of farm implements,
           household utensils and early tools.  He was interested in implements
