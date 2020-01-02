@@ -49,11 +49,13 @@
         </div>
         <% } %>
         <p>
-          Welcome!
-        </p>
-        <p>
-        The following is a list of the different types of tools collected by the
-        North Castle Historical Society:
+          Welcome to Historic Tools of North Castle where you may tour the
+          tools, implements and patent models collected by Mr. J. Norrish Thorne
+          over his lifetime.  The North Castle Historical Society is honored
+          that his family donated the Collection to The Society.  Many of these
+          tools were used in trades not practiced in North Castle today
+          including trades such as wagon making, ice harvesting, cobbling,
+          coopering and farming.
         </p>
         <center>
         <img src="img/tavern.jpg"/>
