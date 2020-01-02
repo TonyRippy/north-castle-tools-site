@@ -3,7 +3,7 @@
 <ul>
   <li
     <% if (selectedGroup == null) { %>
-      class="selected disabled"
+      class="selected"
     <% } %>
     >
     <a href="/">Home</a>
