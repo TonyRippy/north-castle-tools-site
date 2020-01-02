@@ -26,10 +26,6 @@
         margin-top: 20px;
         margin-bottom: 10px;
       }
-      img {
-        display: block;
-        width: 100%;
-      }
     </style>
     <script src="/js/lightgallery.min.js"></script>
     <script src="/js/lg-fullscreen.min.js"></script>
@@ -57,96 +53,99 @@
         <h1>Thorne Collection</h1>
         <p>
           The tools on this site are part of the Thorne Collection,
-          which is available for viewing on the second floor of Smith's Tavern
-          in the Town of North Castle.
-          The collction is organized in a set of displays, shown below.
+          which is available for viewing on the second floor of
+          Smith's Tavern in the Town of North Castle.  The collction
+          is organized in a set of displays, shown below. The displays
+          are shown in clockwise order, starting from the entrance to
+          the collection room. Click on any picture to zoom in.
         </p>
         <h2>Displays</h2>
-        <div id="panel3" style="display:none">
-          Panel #3
-        </div>
+        <div id="panel-1" style="display:none">Panel #1</div>
+        <div id="panel-2" style="display:none">Panel #2</div>
+        <div id="panel-3" style="display:none">Panel #3</div>
+        <div id="panel-4" style="display:none">Panel #4</div>
+        <div id="panel-5" style="display:none">Panel #5</div>
+        <div id="panel-6" style="display:none">Panel #6</div>
+        <div id="panel-7" style="display:none">Panel #7</div>
+        <div id="panel-8" style="display:none">Panel #8</div>
+        <div id="panel-9" style="display:none">Panel #9</div>
+        <div id="panel-10" style="display:none">Panel #10</div>
+        <div id="panel-11" style="display:none">Panel #11</div>
+        <div id="panel-12" style="display:none">Panel #12</div>
+        <div id="panel-13" style="display:none">Panel #13</div>
+        <div id="panel-14" style="display:none">Panel #14</div>
+        <div id="panel-15" style="display:none">Panel #15</div>
+        <div id="panel-16" style="display:none">Panel #16</div>
+        <div id="panel-17" style="display:none">Panel #17</div>
+        <div id="panel-18" style="display:none">Panel #18</div>
+        <div id="window-1" style="display:none">Window #1</div>
+        <div id="window-2" style="display:none">Window #2</div>
         <div id="gallery">
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%203.jpg" data-sub-html="#panel3">
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%201.jpg" data-sub-html="#panel-1">
+            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-1.jpg"></img>
+          </a>
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%202.jpg" data-sub-html="#panel-2">
+            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-2.jpg"></img>
+          </a>
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Window%20%231.jpg" data-sub-html="#window-1">
+            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-window-1.jpg"></img>
+          </a>
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%203.jpg" data-sub-html="#panel-3">
             <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-3.jpg"></img>
           </a>
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%203%20II.jpg">
-            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-3-2.jpg"></img>
-          </a>
-          <!--<h3>Panel #4</h3>-->
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%204.jpg">
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%204.jpg" data-sub-html="#panel-4">
             <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-4.jpg"></img>
           </a>
-          <!--<h3>Panel #5</h3>-->
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%205%20I.jpg">
-            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-3.jpg"></img>
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Window%20%232%20I.jpg" data-sub-html="#window-2">
+            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-window-2.jpg"></img>
           </a>
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%205%20II.jpg">
-            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-3-2.jpg"></img>
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%205%20I.jpg" data-sub-html="#panel-5">
+            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-5.jpg"></img>
           </a>
-          <!--<h3>Panel #6</h3>-->
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%206%20I.jpg">
-            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-3.jpg"></img>
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%205%20II.jpg" data-sub-html="#panel-5">
+            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-5-2.jpg"></img>
           </a>
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%206%20II.jpg">
-            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-3-2.jpg"></img>
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%206%20I.jpg" data-sub-html="#panel-6">
+            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-6.jpg"></img>
           </a>
-          <!--<h3>Panel #7</h3>-->
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%207.jpg">
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%206%20II.jpg" data-sub-html="#panel-6">
+            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-6-2.jpg"></img>
+          </a>
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%207.jpg" data-sub-html="#panel-7">
             <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-7.jpg"></img>
           </a>
-          <!--<h3>Panel #8</h3>-->
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%208.jpg">
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%208.jpg" data-sub-html="#panel-8">
             <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-8.jpg"></img>
           </a>
-          <!--<h3>Panel #9</h3>-->
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%209.jpg">
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%209.jpg" data-sub-html="#panel-9">
             <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-9.jpg"></img>
           </a>
-          <!--<h3>Panel #10-11</h3>-->
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panels%2010-11.jpg">
-            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-10-11.jpg"></img>
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%2010.jpg" data-sub-html="#panel-10">
+            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-10.jpg"></img>
           </a>
-          <!--<h3>Panel #12</h3>-->
-          <!--Coming soon!-->
-          <!-- <img src=""></img> -->
-          <!--<h3>Panel #13</h3>-->
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%2013.jpg">
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panels%2010-11.jpg" data-sub-html="#panel-11">
+            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-11.jpg"></img>
+          </a>
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%2012.jpg" data-sub-html="#panel-12">
+            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-12.jpg"></img>
+          </a>
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%2013.jpg" data-sub-html="#panel-13">
             <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-13.jpg"></img>
           </a>
-          <!--<h3>Panel #14</h3>-->
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%2014.jpg">
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%2014.jpg" data-sub-html="#panel-14">
             <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-14.jpg"></img>
           </a>
-          <!--<h3>Panel #15</h3>-->
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%2015.jpg">
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%2015.jpg" data-sub-html="#panel-15">
             <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-15.jpg"></img>
           </a>
-          <!--<h3>Panel #16</h3>-->
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%2016.jpg">
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%2016.jpg" data-sub-html="#panel-16">
             <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-16.jpg"></img>
           </a>
-          <!--<h3>Panel #17</h3>-->
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%2017.jpg">
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%2017.jpg" data-sub-html="#panel-17">
             <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-17.jpg"></img>
           </a>
-          <!--<h3>Panel #18</h3>-->
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%2018.jpg">
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%2018.jpg" data-sub-html="#panel-18">
             <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-18.jpg"></img>
-          </a>
-          <!--<h3>Window #1</h3>-->
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Window%20%231.jpg">
-            <img src="https://storage.googleapis.com/north-castle-tools-site-images/Window%20%231.jpg"></img>
-          </a>
-          <!--<h3>Window #2</h3>-->
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Window%20%232%20I.jpg">
-            <img src="https://storage.googleapis.com/north-castle-tools-site-images/Window%20%232%20I.jpg"></img>
-          </a>
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Window%20%232%20II.jpg">
-            <img src="https://storage.googleapis.com/north-castle-tools-site-images/Window%20%232%20II.jpg"></img>
-          </a>
-          <!--<h3>Window #3</h3>-->
-          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Window%203.jpg">
-            <img src="https://storage.googleapis.com/north-castle-tools-site-images/Window%203.jpg"></img>
           </a>
         </div>
         <script>
