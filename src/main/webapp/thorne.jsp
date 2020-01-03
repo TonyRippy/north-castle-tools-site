@@ -80,6 +80,9 @@
         <div id="panel-18" style="display:none">Panel #18</div>
         <div id="window-1" style="display:none">Window #1</div>
         <div id="window-2" style="display:none">Window #2</div>
+        <div id="shelf-open" style="display:none">Open Shelf</div>
+        <div id="shelf-left" style="display:none">Left Display</div>
+        <div id="shelf-right" style="display:none">Right Display</div>
         <div id="gallery">
           <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%201.jpg" data-sub-html="#panel-1">
             <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-1.jpg"></img>
@@ -146,6 +149,21 @@
           </a>
           <a href="https://storage.googleapis.com/north-castle-tools-site-images/Panel%2018.jpg" data-sub-html="#panel-18">
             <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-panel-18.jpg"></img>
+          </a>
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Open%20Shelves%20I.jpg" data-sub-html="#shelf-open">
+            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-shelf-open-1.jpg"></img>
+          </a>
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Left%20Shelves%20Top%202.jpg" data-sub-html="#shelf-left">
+            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-shelf-left-1.jpg"></img>
+          </a>
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Left%20Shelves%20Bottom%202.jpg" data-sub-html="#shelf-left">
+            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-shelf-left-2.jpg"></img>
+          </a>
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Right%20Shelves%201-2.jpg" data-sub-html="#shelf-right">
+            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-shelf-right-1.jpg"></img>
+          </a>
+          <a href="https://storage.googleapis.com/north-castle-tools-site-images/Right%20Shelves%20Bottom%202.jpg" data-sub-html="#shelf-right">
+            <img src="https://storage.googleapis.com/north-castle-tools-site-images/thumb-shelf-right-2.jpg"></img>
           </a>
         </div>
         <script>
